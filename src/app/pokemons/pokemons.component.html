@@ -1,0 +1,13 @@
+<div style="text-align: center;">
+<h2>My Pokémon</h2>
+</div>
+
+<ul class="pokemons">
+  <li *ngFor="let pokemon of pokemons" 
+    [class.selected]="pokemon === selectedPokemon"
+    (click)="onSelect(pokemon)">
+    <span class="badge">{{pokemon.id}}</span> {{pokemon.name}}
+  </li>
+</ul>
+
+<app-pokemon-detail [pokemon]="selectedPokemon"></app-pokemon-detail>
